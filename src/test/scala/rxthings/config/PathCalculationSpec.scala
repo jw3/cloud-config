@@ -10,9 +10,10 @@ class PathCalculationSpec extends WordSpec with Matchers {
 
     "Cloud Config Loader" should {
         val uristr = "http://localhost:8080"
+        val uri = Uri(uristr)
 
-        "build full uri" in {
-            DefaultCloudConfigSource(Uri(uristr), "master").fulluri("foo", "dev").toString shouldBe uristr + "/foo/dev/master"
+        "specified profile" in {
+            DefaultCloudConfig(uri, "m").fulluri("foo", "dev") shouldBe Uri(s"$uristr/m/foo-dev.json")
         }
     }
 }
