@@ -1,12 +1,13 @@
 organization := "com.rxthings"
 name := "cloud-config"
-version := "0.1-SNAPSHOT"
+version := "0.2-SNAPSHOT"
 licenses +=("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 scalaVersion := "2.11.7"
 scalacOptions += "-target:jvm-1.8"
 
 resolvers += "jw3 at bintray" at "https://dl.bintray.com/jw3/maven"
+credentials += Credentials(Path.userHome / ".bintray" / ".credentials")
 
 libraryDependencies ++= {
     val akkaVersion = "2.4.1"
