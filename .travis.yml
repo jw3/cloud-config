@@ -1,3 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
 language: scala
 
 scala:
@@ -5,3 +10,8 @@ scala:
 
 jdk:
   - oraclejdk8
+
+before_install:
+  - docker pull springcloud/configserver
+  - docker run -d -p 127.0.0.1:8888:8888 springcloud/configserver
+  - docker ps -a
