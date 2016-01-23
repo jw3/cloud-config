@@ -1,6 +1,6 @@
 organization := "com.rxthings"
 name := "cloud-config"
-version := "0.1-SNAPSHOT"
+version := "0.1"
 licenses +=("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 scalaVersion := "2.11.7"
